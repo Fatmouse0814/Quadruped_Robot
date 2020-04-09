@@ -32,7 +32,13 @@ elseif u(1)<125
 elseif u(1)<145
     Px  = 300*sqrt(2);
 end
-Py = -50;
+if u(1)<85
+    Py = -50;
+elseif u(1)<95
+    Py = -50+5*(u(1)-85);
+else
+    Py = 0;
+end
 if u(1)<21
     Pz = 5*(u(1)-1);
 elseif u(1)<65
